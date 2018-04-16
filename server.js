@@ -4,7 +4,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const jsonpatch = require('jsonpatch');
+ const key = require('./key');
+const middlewares = require('./middlewares');
 
+const fs = require('fs');
 const app = express();
 
 app.use('/img', express.static('img'));
