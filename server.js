@@ -17,7 +17,7 @@ const port = 8000;
 
 app.get('/login', (req, res) => {
   const user = req.query;
-  let token = jwt.sign(user);
+  let token = jwt.sign(user, key.secret);
   localStorage.setItem('jwttoken', token);
   res.json(token);
 });
